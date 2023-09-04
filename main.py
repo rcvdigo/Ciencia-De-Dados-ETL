@@ -2,9 +2,14 @@ import pandas as pd
 import requests
 import json
 import openai
-import apikey as openai_api_key
+import os
+from dotenv import load_dotenv
 
 
+#Configurando as variaveis de ambiente APIKEY
+load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env
+openai.organization = "org-dZKCzRn0kLsstcodLAIF7mn9"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 #Url para acessar a API do Curso
 sdw2023_api_url = "https://sdw-2023-prd.up.railway.app"
 
@@ -50,7 +55,7 @@ print(json.dumps(users, indent=2))
 # 3. Clique em "Create API Key"
 # Link direto: https://platform.openai.com/account/api-keys
 
-openai.api_key = openai_api_key.openai_api_key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_ai_news(user):
     completion = openai.ChatCompletion.create(
