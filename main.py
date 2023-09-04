@@ -49,9 +49,6 @@ print(json.dumps(users, indent=2))
 # 3. Clique em "Create API Key"
 # Link direto: https://platform.openai.com/account/api-keys
 
-# Substitua o texto TODO por sua API Key da OpenAI, ela será salva como uma variável de ambiente.
-openai_api_key = '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'
-
 openai.api_key = openai_api_key
 
 def generate_ai_news(user):
