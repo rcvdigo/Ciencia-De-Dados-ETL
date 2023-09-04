@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 import json
 import openai
+import apikey as openai_api_key
 
 
 #Url para acessar a API do Curso
@@ -49,7 +50,7 @@ print(json.dumps(users, indent=2))
 # 3. Clique em "Create API Key"
 # Link direto: https://platform.openai.com/account/api-keys
 
-openai.api_key = openai_api_key
+openai.api_key = openai_api_key.openai_api_key
 
 def generate_ai_news(user):
     completion = openai.ChatCompletion.create(
